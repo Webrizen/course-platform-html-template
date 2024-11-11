@@ -285,8 +285,9 @@
                             <p data-aos="fade-right" data-aos-delay="600">Prepare for NORCET with top-notch coaching and
                                 comprehensive study resources</p>
                             <div class="banner__btn-wrap" data-aos="fade-right" data-aos-delay="800">
-                                <a href="contact.html" class="btn arrow-btn">Start Your Journey to NORCET Success!<img
-                                        src="assets/img/icons/right_arrow.svg" alt="img" class="injectable"></a>
+                                <button id="openPopupBtn" class="btn arrow-btn">Start Your Journey to NORCET
+                                    Success!<img src="assets/img/icons/right_arrow.svg" alt="img"
+                                        class="injectable"></button>
                             </div>
                         </div>
                     </div>
@@ -348,6 +349,54 @@
                 <div class="custom-notifications">
                     <h3 class="custom-notifications-title">Notification</h3>
                     <ul class="custom-notifications-list">
+                        <li class="custom-notification-item">
+                            <a href="#" class="custom-notification-link">
+                                JEE Main 2025 | Step by Step Process of Application form | Documents Required
+                                <span class="custom-badge">new</span>
+                            </a>
+                        </li>
+                        <li class="custom-notification-item">
+                            <a href="#" class="custom-notification-link">
+                                Regional Mathematical Olympiad (RMO) 2024 Answer key and Paper Solutions
+                                <span class="custom-badge">new</span>
+                            </a>
+                        </li>
+                        <li class="custom-notification-item">
+                            <a href="#" class="custom-notification-link">
+                                Apply for INMO Phase-1 Workshop
+                                <span class="custom-badge">new</span>
+                            </a>
+                        </li>
+                        <li class="custom-notification-item">
+                            <a href="#" class="custom-notification-link">
+                                NMTC Stage 2 Exam 2024-25, Paper & Video Solution
+                                <span class="custom-badge">new</span>
+                            </a>
+                        </li>
+                        <li class="custom-notification-item">
+                            <a href="#" class="custom-notification-link">
+                                JEE Main 2025 | Step by Step Process of Application form | Documents Required
+                                <span class="custom-badge">new</span>
+                            </a>
+                        </li>
+                        <li class="custom-notification-item">
+                            <a href="#" class="custom-notification-link">
+                                Regional Mathematical Olympiad (RMO) 2024 Answer key and Paper Solutions
+                                <span class="custom-badge">new</span>
+                            </a>
+                        </li>
+                        <li class="custom-notification-item">
+                            <a href="#" class="custom-notification-link">
+                                Apply for INMO Phase-1 Workshop
+                                <span class="custom-badge">new</span>
+                            </a>
+                        </li>
+                        <li class="custom-notification-item">
+                            <a href="#" class="custom-notification-link">
+                                NMTC Stage 2 Exam 2024-25, Paper & Video Solution
+                                <span class="custom-badge">new</span>
+                            </a>
+                        </li>
                         <li class="custom-notification-item">
                             <a href="#" class="custom-notification-link">
                                 JEE Main 2025 | Step by Step Process of Application form | Documents Required
@@ -1403,22 +1452,34 @@
                 navigation: {
                     nextEl: ".custom-swiper-button-next",
                     prevEl: ".custom-swiper-button-prev",
+                },
+                breakpoints: {
+                    // For desktop
+                    1024: {
+                        slidesPerView: 1, // Show 1he slides on larger screens
+                    },
+                    // For tablets
+                    768: {
+                        slidesPerView: 2, // Show 2 slides on tablets
+                    },
+                    // For mobile
+                    480: {
+                        slidesPerView: 3, // Show 3 slides on mobile screens
+                    },
                 }
             });
         });
 
         document.addEventListener("DOMContentLoaded", () => {
+            const openPopupBtn = document.getElementById("openPopupBtn");
             const popupOverlay = document.getElementById("popupOverlay");
             const popupCloseBtn = document.getElementById("popupCloseBtn");
             const popupForm = document.getElementById("popupForm");
 
-            // Open popup after 5 seconds, only once per session
-            setTimeout(() => {
-                if (!sessionStorage.getItem("popupShown")) {
-                    popupOverlay.style.display = "flex";
-                    sessionStorage.setItem("popupShown", "true");
-                }
-            }, 5000);
+            // Open popup on button click
+            openPopupBtn.addEventListener("click", () => {
+                popupOverlay.style.display = "flex";
+            });
 
             // Close popup
             popupCloseBtn.addEventListener("click", () => {

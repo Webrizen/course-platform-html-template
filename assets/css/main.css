@@ -20488,6 +20488,8 @@ blockquote > p {
   padding: 15px;
   border: 1px solid #ddd;
   border-radius: 8px;
+  height: 300px;
+  overflow-y: scroll;
 }
 
 .custom-notifications-title {
@@ -20529,6 +20531,69 @@ blockquote > p {
   padding: 2px 6px;
   border-radius: 12px;
   margin-left: 10px;
+}
+
+/* Responsive Adjustments */
+
+/* For tablets (screen width less than 1024px) */
+@media screen and (max-width: 1024px) {
+  .custom-section-grid {
+    grid-template-columns: 1fr; /* Single-column layout */
+    gap: 15px;
+    padding: 100px;
+  }
+
+  .custom-video-slider {
+    height: 300px; /* Adjust height for smaller screens */
+  }
+
+  .custom-notifications {
+    height: auto; /* Let it expand based on content */
+  }
+}
+
+/* For mobile devices (screen width less than 768px) */
+@media screen and (max-width: 768px) {
+  .custom-section {
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+
+  .custom-video-slider {
+    height: 250px;
+  }
+
+  .custom-notifications-title {
+    font-size: 16px; /* Adjust font size */
+  }
+
+  .custom-notification-link {
+    font-size: 13px; /* Adjust font size */
+  }
+
+  .custom-badge {
+    font-size: 10px; /* Adjust badge size */
+    padding: 2px 5px;
+  }
+}
+
+/* For small mobile devices (screen width less than 480px) */
+@media screen and (max-width: 480px) {
+  .custom-section-grid {
+    grid-template-columns: 1fr;
+     /* Single column for very small screens */
+  }
+
+  .custom-video-slider {
+    height: 200px;
+  }
+
+  .custom-notifications-title {
+    font-size: 14px;
+  }
+
+  .custom-notification-link {
+    font-size: 12px;
+  }
 }
 
 /* Answers page css  */
